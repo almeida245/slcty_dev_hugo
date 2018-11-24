@@ -46,8 +46,8 @@ $senha = isset($candidato['senha']) ? $candidato['senha'] : '';
 			</div>
 
 			<div class="tab">Dados Profissionais:
-			  <p><input type="text" placeholder="Experi&ecirc;ncia" name="experiencia" id="experiencia" value="<?=$experiencia?>"></p>
-			  <p><input type="text" placeholder="Forma&ccedil;&atilde;o" name="formacao" id="formacao" value="<?=$formacao?>"></p>
+			  <p><textarea placeholder="Experi&ecirc;ncia" name="experiencia" id="experiencia" cols="100"><?=$experiencia?></textarea></p>
+			  <p><textarea placeholder="Forma&ccedil;&atilde;o" name="formacao" id="formacao" cols="100"><?=$formacao?></textarea></p>
 			</div>
 
 			<div class="tab">Dados de Acesso:
