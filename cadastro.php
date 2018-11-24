@@ -118,8 +118,48 @@ $senha = isset($candidato['senha']) ? $candidato['senha'] : '';
 		}
 
 		function validateForm() {
+			var valid = true;
+
+			if(currentTab == 0){
+				if(document.getElementById('nome').value == ''){
+					document.getElementById('nome').className = 'invalid';
+					valid = false;
+				}
+
+				if(document.getElementById('email').value == '' && document.getElementById('telefone').value == ''){
+					document.getElementById('email').className = 'invalid';
+					document.getElementById('telefone').className = 'invalid';
+					valid = false;
+				}
+			}
+
+			if(currentTab == 2){
+				if(document.getElementById('login').value == ''){
+					document.getElementById('login').className = 'invalid';
+					valid = false;
+				}
+
+				if(document.getElementById('senha').value == ''){
+					document.getElementById('senha').className = 'invalid';
+					valid = false;
+				}
+
+				if(document.getElementById('confirme_senha').value == ''){
+					document.getElementById('confirme_senha').className = 'invalid';
+					valid = false;
+				}
+
+				if(document.getElementById('confirme_senha').value != document.getElementById('senha').value){
+					document.getElementById('senha').className = 'invalid';
+					document.getElementById('confirme_senha').className = 'invalid';
+					valid = false;	
+					alert('Senha não confere!');
+				}
+			}
+
+
 		  // This function deals with validation of the form fields
-		  var x, y, i, valid = true;
+		  /*var x, y, i, valid = true;
 		  x = document.getElementsByClassName("tab");
 		  y = x[currentTab].getElementsByTagName("input");
 		  // A loop that checks every input field in the current tab:
@@ -135,7 +175,7 @@ $senha = isset($candidato['senha']) ? $candidato['senha'] : '';
 		  // If the valid status is true, mark the step as finished and valid:
 		  if (valid) {
 		    document.getElementsByClassName("step")[currentTab].className += " finish";
-		  }
+		  }*/
 		  return valid; // return the valid status
 		}
 
