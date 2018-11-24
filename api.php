@@ -12,16 +12,6 @@ if (isset($_POST['acao'])) {
 	$acao = $_POST['acao'];
 }
 
-if ($acao == 'listar') {
-	$result = $conn->query("SELECT * FROM candidato");
-	$lista_candidatos = array();
-
-	while ($row = $result->fetch_assoc()){
-		array_push($lista_candidatos, $row);
-	}
-	$res['lista_candidatos'] = $lista_candidatos;
-}
-
 if ($acao == 'incluir') {
 	$nome = $_POST['nome'];
 	$email = $_POST['email'];
